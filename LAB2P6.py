@@ -35,7 +35,7 @@ class Player:
         print("Dice  Roll: ", current_die)
         if current_die == self.point:
             self.isWinner(bet)
-        elif current_die == 7 or 11:
+        elif current_die == 7 or current_die == 11:
             self.isLoser(bet)
         elif current_die == 12:
             self.isDraw(bet)
