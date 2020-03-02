@@ -7,6 +7,7 @@ Created on Mon Mar  2 18:34:30 2020
 """
 import random
 
+#THIS CODE IS REMADE INTO A TERMINAL GAME FROM THE ORIGINAL GUI PROJECT
 
 class Player:
     rollsCount = 0
@@ -30,6 +31,8 @@ class Player:
         print("You get your money back!")
         self.printBalance()
         self.point = 0
+    def getRollCount(self):
+        return self.rollsCount
     def pointPlay(self, bet):
         current_die = self.rollDice()
         print("Dice  Roll: ", current_die)
@@ -53,7 +56,7 @@ class Player:
             elif current_die == 4 or current_die == 5 or current_die == 8 or current_die == 10:
                 self.point = current_die
                 self.passPlay(bet)
-            elif current_die == 2 or 3 or 12:
+            elif current_die == 2 or current_die ==  3 or current_die ==  12:
                 self.isLoser(bet)
             else:
                 self.passPlay(bet) 
@@ -71,9 +74,9 @@ class Player:
             current_die = self.rollDice()
             print("Dice Roll: ", current_die)
             if current_die  == 2 or current_die == 3:
-                self.isWinner()
+                self.isWinner(bet)
             elif current_die == 12:
-                self.isDraw()
+                self.isDraw(bet)
             else:
                 self.point = current_die
                 self.dontPassPlay(bet)
