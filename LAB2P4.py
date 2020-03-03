@@ -6,6 +6,8 @@ Created on Sun Mar  1 20:13:37 2020
 @author: Maui
 """
 
+#THIS CODE IS REMADE INTO A TERMINAL GAME FROM THE ORIGINAL GUI PROJECT
+
 class Account:
     user = ["Mark", "Marielle", "Ana"]
     password = ["123", "321", "312"]
@@ -18,7 +20,7 @@ class Account:
         if self.userw in self.user:
             return True
         else:
-            return False
+             return False
     def matchPass(self):
         if self.passw in self.password:
             return True
@@ -41,6 +43,9 @@ class Account:
 
 def login():
     error = 0
+    print("==============================================\n")
+    print("\t\tATM MACHINE")
+    print("\n==============================================\n")
     while error != 3 or error != 10:
         inUser = input("Enter your User: ")
         inPass = input("Enter your Pass: ")
@@ -52,7 +57,7 @@ def login():
             error += 1
             if error == 3:
                 break
-            print("Invalid user or password!! \nIf login is failed", (3-error), "more times the Police will be alerted")
+            print("\nInvalid user or password!! \nIf login is failed", (3-error), "more times the Police will be alerted")
     if(error == 3):
         print("Invalid login. \nThe Police have been alerted!")
     elif(error == 10):
